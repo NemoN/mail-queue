@@ -1,5 +1,5 @@
 {
-    "name"          : "emredoganm/mail-queue",
+    "name"          : "selbil/mail-queue",
     "description"   : "Add your mails to queue and send in order with your cron jobs!",
     "version"       : "1.0.0",
     "license"       : "MIT",
@@ -14,8 +14,8 @@
         }
     ],
     "support"   : {
-        "issues"    : "https://github.com/emredoganm/mail-queue/issues",
-        "source"    : "https://github.com/emredoganm/mail-queue"
+        "issues"    : "https://github.com/selbil/mail-queue/issues",
+        "source"    : "https://github.com/selbil/mail-queue"
     },
     "autoload"  : {
         "psr-4" : {
