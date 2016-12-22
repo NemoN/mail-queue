@@ -1,0 +1,26 @@
+{
+    "name"          : "emredoganm/mail-queue",
+    "description"   : "Add your mails to queue and send in order with your cron jobs!",
+    "version"       : "1.0.0",
+    "license"       : "MIT",
+    "type"          : "package",
+    "require"       : {
+        "phpmailer/phpmailer": "~5.2"
+    },
+    "authors"       : [
+        {
+            "name"  : "Emre DOĞAN",
+            "email" : "emredoganm@live.com"
+        }
+    ],
+    "support"   : {
+        "issues"    : "https://github.com/emredoganm/mail-queue/issues",
+        "source"    : "https://github.com/emredoganm/mail-queue"
+    },
+    "autoload"  : {
+        "psr-4" : {
+            "Selbil\\MailQueue\\" : "src/"
+        }
+    },
+    "minimum-stability" : "stable"
+}
