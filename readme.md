@@ -62,7 +62,7 @@ __cron-for-queue.php__
 	
 	// We are re-initilizating our database config file for reading
 	$config = [
-		"dbname"	=> "kasirga",
+		"dbname"	=> "your-db-name",
 	];
 	
 	// These are for your smtp mail server config
