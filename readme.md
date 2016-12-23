@@ -17,3 +17,26 @@ You can use this class from __composer__
 ```
 	composer require 'selbil/mail-queue' : 'dev-master'
 ```
+
+##Usage
+In your main file for creating queue you can use like that :
+```php
+	<?
+		// Use it because of truer sending and log
+		date_default_timezone_set("Europe/Istanbul");
+
+		// Require or include your composer autoloader
+		require_once "vendor/autoload.php";
+
+		$config = [
+			"dbname"	=> "my_queue_test_db",
+			"sender"	=> "emredoganm@live.com",
+		];
+
+		$queue = new \Selbil\MailQueue\Queue;
+
+		// Set your database config and create schema for mail queue
+		// SelBil Mail Queue uses MySQL
+		$queue->setConfig($config)
+			->createSchema();
+```
