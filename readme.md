@@ -21,22 +21,35 @@ You can use this class from __composer__
 ##Usage
 In your main file for creating queue you can use like that :
 ```php
-	<?
-		// Use it because of truer sending and log
-		date_default_timezone_set("Europe/Istanbul");
+	// Use it because of truer sending and log
+	date_default_timezone_set("Europe/Istanbul");
 
-		// Require or include your composer autoloader
-		require_once "vendor/autoload.php";
+	// Require or include your composer autoloader
+	require_once "vendor/autoload.php";
 
-		$config = [
-			"dbname"	=> "my_queue_test_db",
-			"sender"	=> "emredoganm@live.com",
+	$queueConfig = [
+		"dbname"	=> "my_queue_test_db",
+		"sender"	=> "emredoganm@live.com",
+	];
+
+	// SelBil Mail Queue uses this default config, you can customize it with setConfig() function
+	/*
+		public $defaultConfig = [
+		    "host"      => "localhost",
+		    "port"      => 3306,
+		    "dbname"    => "your-db-name",
+		    "charset"   => "UTF8",
+		    "username"  => "root",
+		    "password"  => "root",
+		    "table"     => "mail_queue",
+		    "sender"    => NULL,
 		];
+	*/
 
-		$queue = new \Selbil\MailQueue\Queue;
+	$queue = new \Selbil\MailQueue\Queue;
 
-		// Set your database config and create schema for mail queue
-		// SelBil Mail Queue uses MySQL
-		$queue->setConfig($config)
-			->createSchema();
+	// Set your database config and create schema for mail queue
+	// SelBil Mail Queue uses MySQL
+	$queue->setConfig($queueConfig)
+		->createSchema();
 ```
