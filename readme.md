@@ -9,13 +9,13 @@ This mail queue created for organising your mail queue and making your server mo
 ### Cloning
 You can download as a **.zip** file by clicking above or clone this repository :
 ```
-	git clone https://github.com/selbil/mail-queue
+	git clone https://github.com/selbil/mail-queue.git
 ```
 
 ### With Composer
 You can use this class from __composer__
 ```
-	composer require 'selbil/mail-queue' : 'dev-master'
+	composer require "selbil/mail-queue" : "dev-master",
 ```
 
 ##Usage
@@ -88,3 +88,10 @@ __cron-for-queue.php__
 	// Run the query for your customers or users
 	$mailer->run();
 ```
+
+###Regards to PHPMailer
+This repository uses PHPMailer and all of its components for easier mail sendings. You can read the documentation of PHPMailer from https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
+
+Selbil Mail Queue use PHPMailer instance in `Mail` class as `public $mailer`variable. You can use all the features after __setting Mail class config__.
+
+Thank you for support!
