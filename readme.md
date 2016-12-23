@@ -19,7 +19,6 @@ You can use this class from __composer__
 ```
 
 ##Usage
-In your main file for creating queue you can use like that :
 __main.php__
 ```php
 	// Use it because of truer sending and log
@@ -47,7 +46,7 @@ __main.php__
 		];
 	*/
 
-	$queue = new \Selbil\MailQueue\Queue;
+	$queue = new Selbil\MailQueue\Queue;
 
 	// Set your database config and create schema for mail queue
 	// SelBil Mail Queue uses MySQL
@@ -75,7 +74,7 @@ __cron-for-queue.php__
 	];
 
 	
-	$mailer = new \Selbil\MailQueue\Mail;
+	$mailer = new Selbil\MailQueue\Mail;
 	
 	// Database config registration
 	$mailer->setDatabaseConfig($config);
