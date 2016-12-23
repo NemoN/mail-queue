@@ -20,6 +20,7 @@ You can use this class from __composer__
 
 ##Usage
 In your main file for creating queue you can use like that :
+__main.php__
 ```php
 	// Use it because of truer sending and log
 	date_default_timezone_set("Europe/Istanbul");
@@ -52,4 +53,39 @@ In your main file for creating queue you can use like that :
 	// SelBil Mail Queue uses MySQL
 	$queue->setConfig($queueConfig)
 		->createSchema();
+```
+
+__cron-for-queue.php__
+```php
+	date_default_timezone_set("Europe/Moscow");
+	
+	require 'vendor/autoload.php';
+	
+	// We are re-initilizating our database config file for reading
+	$config = [
+		"dbname"	=> "kasirga",
+	];
+	
+	// These are for your smtp mail server config
+	// I am using my Gmail account for testing
+	$mailConfig = [
+		"host" 		=> "smtp.gmail.com",
+		"username"	=> "emredoganm06@gmail.com",
+		"password"	=> "my-beautiful-password"
+	];
+
+	
+	$mailer = new \Selbil\MailQueue\Mail;
+	
+	// Database config registration
+	$mailer->setDatabaseConfig($config);
+
+	// Mailer config registration
+	$mailer->setConfig($mailConfig);
+	
+	// Number of mail for one cycle
+	$mailer->setLimit(5);
+
+	// Run the query for your customers or users
+	$mailer->run();
 ```
