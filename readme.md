@@ -8,8 +8,12 @@ This mail queue created for organising your mail queue and making your server mo
 ## Installation
 ### Cloning
 You can download as a **.zip** file by clicking above or clone this repository :
-```git clone https://github.com/selbil/mail-queue```
+```
+	git clone https://github.com/selbil/mail-queue
+```
 
 ### With Composer
 You can use this class from __composer__
-```composer require 'selbil/mail-queue' : 'dev-master'```
+```
+	composer require 'selbil/mail-queue' : 'dev-master'
+```
