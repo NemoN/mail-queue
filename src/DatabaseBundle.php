@@ -18,12 +18,12 @@ class DatabaseBundle extends PDO{
 	}
 
 	protected function setDatabase(){
-		$connectionString = "mysql:host=".$this->config["host"].";";
-		$connectionString .= "port=".$this->config["port"].";";
-		$connectionString .= "dbname=".$this->config["dbname"].";";
-		$connectionString .= "charset=".$this->config["charset"].";";
+		$connectionString = "mysql:host=".$this->config->host.";";
+		$connectionString .= "port=".$this->config->port.";";
+		$connectionString .= "dbname=".$this->config->dbname.";";
+		$connectionString .= "charset=".$this->config->charset.";";
 
-		$this->conn = new PDO($connectionString , $this->config["username"] , $this->config["password"] , $this->dbOptions);
+		$this->conn = new PDO($connectionString , $this->config->username , $this->config->password , $this->dbOptions);
 		$this->conn->query("SET NAMES utf8;");
 		return $this;
 	}
@@ -34,7 +34,7 @@ class DatabaseBundle extends PDO{
 			$sql .= implode("," , array_keys($array));
 			$sql .= ") VALUES (";
 			$values = array_map(function($item){
-				return "'".addslashes($item)."'";
+				return $item == NULL ? 'NULL' : "'".addslashes($item)."'";
 			},$array);
 			$sql .= implode("," , $values).")";
 			$this->tryQuery($sql);
@@ -43,7 +43,7 @@ class DatabaseBundle extends PDO{
 		return false;
 	}
 
-	protected function tryQuery($sql){
+	public function tryQuery($sql){
 		try{
 			$statement = $this->conn->prepare($sql);
 			$statement->execute();
