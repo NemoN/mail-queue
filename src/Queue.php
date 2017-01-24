@@ -1,4 +1,4 @@
-<? namespace Selbil\MailQueue;
+<?php namespace Selbil\MailQueue;
 
 class Queue{
 
