@@ -61,6 +61,8 @@ class Mail{
         else $this->mailer->setFrom($mailOperation->sender);
         if ($mailOperation->receiverName) $this->mailer->addAddress($mailOperation->receiver, $mailOperation->receiverName);
         else $this->mailer->addAddress($mailOperation->receiver);
+        if($mailOperation->reply && $mailOperation->replyName) $this->mailer->addReplyTo($mailOperation->reply, $mailOperation->replyName);
+        elseif($mailOperation->reply) $this->mailer->addReplyTo($mailOperation->reply);
         if($mailOperation->bcc) $this->mailer->addBCC($mailOperation->bcc);
         $this->mailer->isHTML(true);
 
