@@ -15,7 +15,7 @@ You can download as a **.zip** file by clicking above or clone this repository :
 ### With Composer
 You can use this class from __composer__
 ```
-	composer require "selbil/mail-queue" : "dev-master",
+	composer require "selbil/mail-queue":"dev-master"
 ```
 
 ##Usage
