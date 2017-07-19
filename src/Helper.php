@@ -11,6 +11,7 @@ class Helper{
         "password"  => "root",
         "table"     => "mail_queue",
         "sender"    => NULL,
+        "senderName"=> NULL
     ];
 
     public $mailConfig = [
