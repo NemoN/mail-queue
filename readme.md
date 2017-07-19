@@ -18,7 +18,7 @@ You can use this class from __composer__
 	composer require "selbil/mail-queue":"dev-master"
 ```
 
-##Usage
+### Usage
 __main.php__
 ```php
 	// Use it because of truer sending and log
@@ -89,7 +89,7 @@ __cron-for-queue.php__
 	$mailer->run();
 ```
 
-###Regards to PHPMailer
+### Regards to PHPMailer
 This repository uses PHPMailer and all of its components for easier mail sendings. You can read the documentation of PHPMailer from https://github.com/PHPMailer/PHPMailer/wiki/Tutorial
 
 Selbil Mail Queue use PHPMailer instance in `Mail` class as `public $mailer`variable. You can use all the features after __setting Mail class config__.
