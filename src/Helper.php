@@ -3,15 +3,18 @@
 class Helper{
 
     public $defaultConfig = [
-        "host"      => "localhost",
-        "port"      => 3306,
-        "dbname"    => "your-db-name",
-        "charset"   => "UTF8",
-        "username"  => "root",
-        "password"  => "root",
-        "table"     => "mail_queue",
-        "sender"    => NULL,
-        "senderName"=> NULL
+        "host"         => "localhost",
+        "port"         => 3306,
+        "dbname"       => "your-db-name",
+        "charset"      => "UTF8",
+        "username"     => "root",
+        "password"     => "root",
+        "table"        => "mail_queue",
+        "sender"       => NULL,
+        "senderName"   => NULL,
+        "reply"        => NULL,
+        "replyName"    => NULL,
+        "receiverName" => NULL
     ];
 
     public $mailConfig = [
