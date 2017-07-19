@@ -57,8 +57,10 @@ class Mail{
     }
 
     protected function sendMailFor($mailOperation){
-        $this->mailer->setFrom($mailOperation->sender , 'Mailer');
-        $this->mailer->addAddress($mailOperation->receiver, 'Joe User');
+        if($mailOperation->senderName) $this->mailer->setFrom($mailOperation->sender , $mailOperation->senderName);
+        else $this->mailer->setFrom($mailOperation->sender);
+        if ($mailOperation->receiverName) $this->mailer->addAddress($mailOperation->receiver, $mailOperation->receiverName);
+        else $this->mailer->addAddress($mailOperation->receiver);
         if($mailOperation->bcc) $this->mailer->addBCC($mailOperation->bcc);
         $this->mailer->isHTML(true);
 
