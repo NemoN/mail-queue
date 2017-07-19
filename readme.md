@@ -43,6 +43,7 @@ __main.php__
 		    "password"  => "root",
 		    "table"     => "mail_queue",
 		    "sender"    => NULL,
+		    "senderName"=> NULL,
 		];
 	*/
 
