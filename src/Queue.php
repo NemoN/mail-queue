@@ -16,8 +16,9 @@ class Queue{
         return $this;
     }
 
-    public function setDefaultSender($sender){
+    public function setDefaultSender($sender, $senderName=""){
         $this->config->sender = trim($sender);
+        if($senderName) $this->config->senderName = trim($senderName);
         return $this;
     }
 
@@ -27,7 +28,7 @@ class Queue{
             "updated_at"        => date("Y-m-d H:i:s"),
             "sender"            => $this->config->sender,
         ];
-        $attributes = array_merge($defaults , $attributes);
+        $attributes = array_merge($defaults, $attributes);
         if($attributes["sender"] === NULL || trim($attributes["sender"]) === ""){
             die("An queued email needs a sender!");
         }
