@@ -44,6 +44,8 @@ __main.php__
 		    "table"     => "mail_queue",
 		    "sender"    => NULL,
 		    "senderName"=> NULL,
+		    "reply"     => NULL,
+		    "replyNAme" => NULL
 		];
 	*/
 
