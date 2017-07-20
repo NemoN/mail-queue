@@ -27,6 +27,9 @@ class Queue{
             "created_at"        => date("Y-m-d H:i:s"), 
             "updated_at"        => date("Y-m-d H:i:s"),
             "sender"            => $this->config->sender,
+        	"senderName"      	=> $this->config->senderName,
+        	"reply"             => $this->config->reply,
+        	"replyName"         => $this->config->replyName
         ];
         $attributes = array_merge($defaults, $attributes);
         if($attributes["sender"] === NULL || trim($attributes["sender"]) === ""){
