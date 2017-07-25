@@ -71,6 +71,7 @@ class Mail{
         
         if($this->config->crypt){
             echo "debug: crypt mail";
+            echo $this->config->certificateFile;
         }
         
         if($this->config->debug){
