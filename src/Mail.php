@@ -70,8 +70,13 @@ class Mail{
         $this->mailer->Body    = $mailOperation->content;
         
         if($this->config->crypt){
-            echo "debug: crypt mail";
-            echo $this->config->certificateFile;
+            // Configure message signing (the actual signing does not occur until sending)
+            $this->mailer->sign(
+                $this->config->certificateFile,     // The location of your certificate file
+                $this->config->privateKeyFile,		// The location of your private key file
+                $this->config->privateKeyPassword,  // The password you protected your private key with (not the Import Password! may be empty but parameter must not be omitted!)
+                $this->config->CAChainFile          // The location of your chain file
+            );
         }
         
         if($this->config->debug){
