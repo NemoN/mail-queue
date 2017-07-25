@@ -26,6 +26,7 @@ class Helper{
         "smtp_secure"       => "tls",
         "port"              => 587,
         "debug"             => true,
+        "crypt"             => false
     ];
 
     public function randomDate($start_date, $end_date){
