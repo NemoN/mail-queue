@@ -68,6 +68,11 @@ class Mail{
 
         $this->mailer->Subject = $mailOperation->subject;
         $this->mailer->Body    = $mailOperation->content;
+        
+        if($this->config->crypt){
+            echo "debug: crypt mail";
+        }
+        
         if($this->config->debug){
             try{
                 $this->mailer->send();
